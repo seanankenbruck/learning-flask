@@ -1,0 +1,16 @@
+Data Directory: C:\Program Files\PostgreSQL\9.6\data
+pw: R0meo0117!
+port: 5432
+
+type nul > filename
+
+# Deploying to Heroku
+pip install gunicorn
+pip freeze > requirements.txt
+type nul > Procfile
+
+heroku create
+git add new files
+git commit -m "Heroku config"
+git push heroku master -> to push to heroku
+git push origin master -> to push to github
