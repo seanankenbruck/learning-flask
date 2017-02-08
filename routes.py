@@ -1,6 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from models import db
+from forms import SignupForm
 
 app = Flask(__name__)
+
+# Connect the postgresql database to our application
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
+
+app.secret_key = "development-key"
 
 @app.route("/")
 def index():
@@ -10,9 +19,13 @@ def index():
 def about():
   return render_template("about.html")
 
-@app.route("/info")
-	def test():
-		return test
+@app.route("/signup", methods=['GET', 'POST'])
+def signup():
+	form = SignupForm()
+	if request.method == 'POST':
+		return "Success!"
+	elif request.method == 'GET':	
+		return render_template('signup.html', form=form)
 
 if __name__ == "__main__":
 	app.run(debug=True)
