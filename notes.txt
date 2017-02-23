@@ -2,6 +2,9 @@ Data Directory: C:\Program Files\PostgreSQL\9.6\data
 pw: R0meo0117
 port: 5432
 
+Start virtual env
+venv\Scripts\activate
+
 type nul > filename
 
 # Deploying to Heroku
@@ -16,19 +19,21 @@ git push heroku master -> to push to heroku
 git push origin master -> to push to github
 
 How to launch postgresql
+C:\Program Files\PostgreSQL\9.6\bin
 psql -U postgres -> then use the above password
 
 Access db: \c learningflask
 
-Create table: learningflask=# CREATE TABLE users (
-learningflask(# uid serial PRIMARY KEY,
-learningflask(# firstname VARCHAR(100) not null,
-learningflask(# lastname VARCHAR(100) not null,
-learningflask(# email VARCHAR(120) not null unique,
-learningflask(# pwdhash VARCHAR(100) not null
-learningflask(# );
+Create table: 
+CREATE TABLE users (
+uid serial PRIMARY KEY,
+firstname VARCHAR(100) not null,
+lastname VARCHAR(100) not null,
+email VARCHAR(120) not null unique,
+pwdhash VARCHAR(100) not null
+);
 
-Connect db to flask app
+Connect db to flask app -> DONE! 
 
 1) install flask-sqlalchemy
 pip install flask-sqlalchemy
