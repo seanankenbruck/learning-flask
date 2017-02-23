@@ -39,7 +39,7 @@ Connect db to flask app -> DONE!
 pip install flask-sqlalchemy
 
 2) Set configuration in routes.py file
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:R0meo0117@localhost:5432/learningflask'
 
 3) Write the user model to read and write from the database
 See models.py file, as well as routes.py files mods
@@ -50,3 +50,10 @@ pip install flask-wtf
 2) Create a forms.py file and add code to create the form
 3) In routes.py, import SignupForm, add app.secret_key to prevent csrf attacks, add a signup route
 4) Create signup.html template
+
+Chapter 5.1 - Setting Up a Session
+1) From flask add these items: request, session, redirect, url_for
+2) In the post method conditional add session and a redirect for when the session has been invoked
+3) First, create a new class named login form in forms.py 
+4) Second, create a new URL mapping for /login in routes.py 
+5) third, create a web template in templates to create this form
