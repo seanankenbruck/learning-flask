@@ -54,6 +54,9 @@ pip install flask-wtf
 Chapter 5.1 - Setting Up a Session
 1) From flask add these items: request, session, redirect, url_for
 2) In the post method conditional add session and a redirect for when the session has been invoked
+Login - creates session, maps to user, cookie in browser
 3) First, create a new class named login form in forms.py 
 4) Second, create a new URL mapping for /login in routes.py 
 5) third, create a web template in templates to create this form
+Logout - deletes session, destroys mapping to user
+6) Create a logout route and use session.pop
