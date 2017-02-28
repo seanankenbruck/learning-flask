@@ -60,3 +60,5 @@ Login - creates session, maps to user, cookie in browser
 5) third, create a web template in templates to create this form
 Logout - deletes session, destroys mapping to user
 6) Create a logout route and use session.pop
+
+Chapter 6 - Authorization
